@@ -1,0 +1,17 @@
+<section>
+  <div class="page-header our-experts">
+      <h1>Our Experts</h1>
+  </div>
+  <div class="row">
+    <nav class="col-sm-3 col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li ng-repeat="expert in vm.experts" ui-sref-active="active">
+          <a ui-sref="chat.expert({ expertUserId: expert.user._id })" ng-click="vm.changeExpert(expert)" ng-bind="expert.user.displayName"></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-md-9">
+      <div ui-view></div>
+    </div>
+  </div>
+</section>

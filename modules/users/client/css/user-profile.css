@@ -1,0 +1,63 @@
+.user-profile-image {
+	border-radius: 50%;
+	border: 2px solid darkgrey;
+	margin-top: 20px;
+	width: 100px;
+}
+
+.user-profile-details {
+	padding-left: 20px;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 16px;
+	color: #003442;
+}
+
+.user-profile-details h2 {
+	color: #D55256;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	text-transform: capitalize;
+}
+
+.user-profile-username {
+	color: #003442;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 20px;
+}
+
+.user-profile-details td {
+	width: 70%;
+}
+
+.user-profile-courses {
+	margin: 30px 0 10px 0;
+	padding:10px 10px 40px 10px;
+	background: grey;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.user-profile-courses h2 {
+	color: #D55256;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	text-transform: capitalize;
+}
+
+.user-profile-results h2 {
+	color: #D55256;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	text-transform: capitalize;
+}
+
+.abc {
+	border: 1px solid black;
+}
+
+.abcd {
+	margin: 0 auto;
+}

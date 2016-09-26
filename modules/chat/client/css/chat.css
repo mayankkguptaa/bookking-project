@@ -1,0 +1,38 @@
+.chat-message {
+  	margin-top: 10px;
+  	padding-top: 10px;
+}
+
+.default-chat-screen{
+	color: #D55256;
+	position: relative;
+	top: 80px;
+}
+
+.chat-box{
+	max-height: 300px;
+	width: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	border-left: 1px solid #e7e7e7;
+}
+
+.chat-message:not(:first-child) {
+  border-top: 1px solid #e7e7e7;
+}
+.chat-message-details {
+  margin-left: 10px;
+}
+.chat-profile-image {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+}
+
+.our-experts{
+	margin-top: 0;
+	padding-top: 0;
+}
+

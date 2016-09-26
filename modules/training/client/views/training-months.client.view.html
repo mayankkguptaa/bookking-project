@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
+
+<div class="container-fluid">
+  <div class="col-lg-12 full-screen">
+    <div class="row">
+
+      <section class="overlap-top-margin">
+        <div class="text-center wellmonthwise" align="center">
+          <h2 class="text-uppercase">{{vm.months}} month<span ng-if="vm.months!=='1'">s</span> Course </h2>
+          <p>You can select any {{vm.choices}} of the given choice of categories to learn from</p>
+        </div>
+
+        <div class="imgaftermonths" align="center">
+          <img src="modules/training/client/img/course1month.jpg">
+          <img src="modules/training/client/img/course3month.jpg">
+          <img src="modules/training/client/img/course6month.jpg">
+        </div>
+
+        <div class="row">
+          <div class="alert alert-danger fade in" ng-if="vm.selectError">
+            <a href = "#" class="close" ng-click="vm.selectError = false" aria-label="close">&times;</a>
+            <strong> You cannot select more than {{vm.choices}} categor<span ng-if="vm.months!=='1'">ies</span><span ng-if="vm.months=='1'">y</span>.</strong>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2" ng-repeat="category in vm.categories" align="center">
+            <div class="wellmonthwise-box">
+
+              <img class="img-circle" src="modules/training/client/img/categories/category-image{{$index + 1}}.svg">
+              <br/>
+              <span class="category-description">Details</span>
+              <div class="list-categories text-capitalize" ng-click="vm.selectCategory(category)"
+                   ng-class="{ 'category-selected': category.check }"
+                   align="center">
+                {{category.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div align="center">
+          <span class="authentication-message" ng-show="vm.authenticationMessage">* You need to sign-in to proceed<br/></span>
+          <button type="button" class="btn proceed-button" data-toggle="modal" data-target="#PackageShow"
+                  style="color:white;" ng-disabled="vm.enableProceed()" ng-click="vm.proceedClicked()">Proceed
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<link rel="stylesheet" type="text/css" href="modules/users/client/css/user-profile.css">
+
+<section class="user-profile">
+  <div class="container-fluid">
+    <div class="col-lg-12 full-screen">
+      <div class="row">
+
+
+        <div class="col-lg-12 full-screen">
+          <div class="user-profile-details">
+            <div class="col-lg-2">
+              <img ng-src="{{vm.user.profileImageURL}}" class="profile-circle user-profile-image pull-right"/>
+            </div>
+
+            <div class="col-lg-8">
+
+              <h2>{{vm.user.displayName}} <span class="user-profile-username">({{vm.user.username}})</span></h2>
+
+              <table class="table-hover">
+                <tr>
+                  <td>Gender : </td>
+                  <td ng-bind="vm.user.gender"></td>
+                </tr>
+                <tr>
+                  <td>Date Of Birth : </td>
+                  <td ng-bind="vm.dateFormat(vm.user.dob)"></td>
+                </tr>
+                <tr>
+                  <td>Mobile Number : </td>
+                  <td ng-bind="vm.user.mobile"></td>
+                </tr>
+                <tr>
+                  <td>Email Id : </td>
+                  <td ng-bind="vm.user.email"></td>
+                </tr>
+              </table>
+
+              <span class="pull-right">
+              <button ui-sref="settings.profile" class="btn vanitycube-btn">
+                Edit Details
+              </button>
+            </span>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 full-screen">
+          <div class="user-profile-courses">
+
+            <div>
+              <div align="center">
+                <h2>My Courses</h2>
+              </div>
+
+              <div class="abcd" align="center">
+                You haven't opted for any course yet.
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-12 full-screen">
+          <div class="user-profile-results">
+
+            <div>
+              <div align="center">
+                <h2>Results</h2>
+              </div>
+
+              <div class="abcd" align="center">
+                No results to display.
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</section>

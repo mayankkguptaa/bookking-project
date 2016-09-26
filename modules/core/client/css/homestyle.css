@@ -1,0 +1,239 @@
+.contacts-home{
+	width: 100%;
+	background: rgb(213, 82, 86);
+	color: white;
+	height: 2.2em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	padding-top: 5px;
+	overflow: hidden;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.default-font{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.box1{
+	border:1px solid #D55256;
+	margin: 20px 45px 20px 45px;
+	border-radius: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.myCarousel{
+	max-height: 490px;
+	height: 480px;
+	overflow: hidden;
+	margin: 10px 0 30px 0;
+}
+
+.homebox1 {
+	margin-left: 2.8%;
+}
+
+
+.homebox1 p {
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #D55256;
+}
+
+.expchat{
+	margin: 30px 0 10px 0;
+	padding:10px 10px 40px 10px;
+	background: grey;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.expchat h2{
+	width: 30%;
+	margin: 16px 20px 20px 20px;
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+
+}
+
+.expchat p{
+	font: 14px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-bottom: 20px;
+	color: #003442;
+	margin-top: 3px;
+}
+.expchat h3{
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 20px 10px 10px 10px;
+	color: #003442;
+
+}
+
+.expchat hr{
+	height: 2px;
+    border: 0;
+	width: 30%;
+}
+.expimg{
+	height: 120px;
+	width: 120px;
+	border:2px solid #dbdbdb;
+}
+
+.expert-chat-btn {
+	margin-bottom: 10px;
+}
+
+.testimonial-image{
+	background-color: darkgrey;
+	background-color: rgba(0,0,0,.2);
+}
+
+section {
+	padding: 10px 0;
+}
+.carouselfeedback {
+	background-color: #003442;
+	color: white;
+	margin: 10px 0 70px 0;
+}
+
+.carouselfeedback blockquote{
+	min-height: 90px;
+}
+.carouselfeedback cite {
+	margin: 0 80px 0 0;
+}
+
+.center {
+	margin: auto;
+}
+
+.whyvc{
+	margin: 10px 0 60px 0;
+	padding: 0 30px 40px 30px;
+	background: darkgrey;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	color: #003442;
+	font: 15px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.whyvc h1{
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+}
+
+.carousel-feedback-heading{
+	margin: 30px;
+	color: white;
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+.quote {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+.fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+	  -moz-transition-property: opacity;
+		-o-transition-property: opacity;
+          transition-property: opacity;
+}
+.fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -moz-transition-property: opacity;
+	-o-transition-property: opacity;
+          transition-property: opacity;
+}
+.fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+.fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: white;
+  border: none;
+}
+.fade-quote-carousel blockquote {
+    text-align: center;
+    border: none;
+	font: 16px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.fade-quote-carousel .profile-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+.feedbackbtn {
+	margin:20px;
+}
+
+.testimonial-login-message {
+	font-size: 14px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 500;
+	color: white;
+	position: relative;
+	top: 0;
+	left: 140px;
+
+}
+
+.carousel-caption {
+	margin-bottom: 50px;
+}
+
+.main-carousel-heading {
+	font: 50px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+.main-carousel-subheading {
+	font: 30px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+
+.testimonial-button{
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #003442;
+	float: right;
+	margin: 0;
+}
+
+.categories-view p{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+}
+.categories-view h3{
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+}
+
+.centerr {
+	margin-left: 20px;
+	border: 1px solid black;
+}
+
+.categories-view a{
+	text-decoration: none;
+	color: grey;
+}
+
