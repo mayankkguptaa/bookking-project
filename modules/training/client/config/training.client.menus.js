@@ -9,20 +9,20 @@
 
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
-      title: 'Training',
-      state: 'training.home',
+      title: 'About Us',
+      state: 'about',
       roles: ['*']
     });
 
     menuService.addMenuItem('topbar', {
-      title: 'Examination',
-      state: 'examination.home',
+      title: 'FAQ',
+      state: 'faq',
       roles: ['*']
     });
 
     menuService.addMenuItem('topbar', {
-      title: 'Recruitment',
-      state: 'recruitment.home',
+      title: 'Contact Us',
+      state: 'contactUs',
       roles: ['*']
     });
   }
