@@ -2,9 +2,9 @@
   'use strict';
 
   $('#myCarousel').carousel({
-    interval: 4000
+    interval: 6000
   });
   $('#fade-quote-carousel').carousel({
-    interval: 4000
+    interval: 6000
   });
 }());

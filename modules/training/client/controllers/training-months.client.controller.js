@@ -51,7 +51,7 @@
 
       var modalInstance = $uibModal.open({
         animation: vm.animationsEnabled,
-        templateUrl: 'modules/training/client/views/proceed-modal.client.view.html',
+        templateUrl: 'modules/bookstore/client/views/proceed-modal.client.view.html',
         controller: 'ModalCtrl',
         controllerAs: 'vm',
         size: size,
@@ -75,7 +75,7 @@
         $log.info('Modal dismissed at: ' + new Date());
       });
     }
-    
+
     function proceedClicked() {
       if (vm.user) {
         vm.getCost();
@@ -140,7 +140,7 @@
     function resetChoices() {
       vm.cancel();
     }
-   
+
     vm.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };

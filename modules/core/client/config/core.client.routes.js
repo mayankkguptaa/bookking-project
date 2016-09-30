@@ -29,7 +29,7 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'modules/core/client/views/VanityCube.client.view.html',
+        templateUrl: 'modules/core/client/views/home.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
@@ -60,7 +60,7 @@
       .state('faq', {
         url: '/faq',
         templateUrl: 'modules/core/client/views/faq.client.view.html',
-        data: {          
+        data: {
           pageTitle: 'Frequently Asked Questions'
         }
       })
@@ -90,6 +90,20 @@
         templateUrl: 'modules/core/client/views/privacyPolicy.client.view.html',
         data: {
           pageTitle: 'Privacy Policy'
+        }
+      })
+      .state('add-book', {
+        url: '/add-book',
+        templateUrl: 'modules/core/client/views/addBook.client.view.html',
+        data: {
+          pageTitle: 'Add Books'
+        }
+      })
+      .state('book-store', {
+        url: '/book-display',
+        templateUrl: 'modules/core/client/views/bookStore.client.view.html',
+        data: {
+          pageTitle: 'Book Store'
         }
       });
   }

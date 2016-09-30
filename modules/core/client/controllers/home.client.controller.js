@@ -5,18 +5,18 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['ExpertsService', '$uibModal', '$log', 'Authentication'];
+  HomeController.$inject = ['ExpertsService', '$uibModal', '$log', 'Authentication', '$state'];
 
-  function HomeController(ExpertsService, $uibModal, $log, Authentication) {
+  function HomeController(ExpertsService, $uibModal, $log, Authentication, $state) {
     var vm = this;
 
     vm.experts = [];
     vm.user = Authentication.user;
     vm.animationsEnabled = true;
-    vm.canNotSubmitTestimonialMsg = false;
+    vm.canNotSubmitAdMsg = false;
     vm.open = open;
-    vm.submitTestimonialClicked = submitTestimonialClicked;
-    
+    vm.submitBookAdClicked = submitBookAdClicked;
+
     ExpertsService.query(function (res) {
       vm.experts = res;
     });
@@ -28,19 +28,19 @@
         templateUrl: 'modules/core/client/views/testimonial-modal.client.view.html',
         controller: 'TestimonialModal',
         controllerAs: 'vm',
-        size: size        
+        size: size
       });
 
       modalInstance.result.then(function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
     }
-    
-    function submitTestimonialClicked() {
+
+    function submitBookAdClicked() {
       if (vm.user) {
-        vm.open('lg');
+        $state.go('add-book');
       } else {
-        vm.canNotSubmitTestimonialMsg = true;
+        vm.canNotSubmitAdMsg = true;
       }
     }
   }

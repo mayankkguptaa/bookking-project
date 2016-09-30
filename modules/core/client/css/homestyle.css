@@ -1,7 +1,105 @@
-/*
+.default-font{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.myCarousel{
+	max-height: 500px;
+	height: 500px;
+	overflow: hidden;
+	margin: 0 0 30px 0;
+}
+
+.main-carousel-heading {
+	font: 50px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+.main-carousel-subheading {
+	font: 30px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+
+.carousel-caption {
+	margin-bottom: 30px;
+}
+
+.feature-sell {
+	margin: 20px;
+}
+
+.old-book-img img {
+	max-height: 200px;
+	max-width: 250px;
+	min-height: 200px;
+	min-width: 250px;
+	margin: 20px;
+}
+
+.feature-sell h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-size: 35px;
+	color: #D93240;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.feature-sell p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: #17A697;
+	margin-bottom: 40px;
+}
+
+.submit-ad-button {
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	background: #D93240;
+	border: 1px solid #D93240;
+	float: right;
+	margin: 0;
+}
+
+.feature-buy {
+	margin: 30px 0 0 0;
+	padding: 10px 10px 60px 10px;
+	background: #003442;
+}
+
+.feature-buy h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-size: 35px;
+	color: white;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.feature-buy p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: white;
+	margin-bottom: 40px;
+}
+
+.login-first-message {
+	font-size: 14px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 500;
+	color: red;
+	position: relative;
+	top: 0;
+	left: -60px;
+}
+
+.available-books-button {
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #003442;
+	float: right;
+}
+
 .contacts-home{
 	width: 100%;
-	background: rgb(213, 82, 86);
+	background: #17A697;
 	color: white;
 	height: 2.2em;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -11,75 +109,66 @@
 	padding-right: 20px;
 	padding-left: 20px;
 }
-*/
 
-.default-font{
-	font-family: 'Source Sans Pro', sans-serif;
-}
-.box1{
-	border:1px solid #D55256;
-	margin: 20px 45px 20px 45px;
-	border-radius: 10px;
-	font-family: 'Source Sans Pro', sans-serif;
+.carousel-testimonial {
+	background-color: #17A697;
+	color: white;
+	margin: 0 0 70px 0;
 }
 
-.myCarousel{
-	max-height: 490px;
-	height: 480px;
-	overflow: hidden;
-	margin: 10px 0 30px 0;
+.carousel-testimonial blockquote{
+	min-height: 90px;
+}
+.carousel-testimonial cite {
+	margin: 0 80px 0 0;
 }
 
-.homebox1 {
-	margin-left: 2.8%;
+.testimonial-image{
+	background-color: darkgrey;
+	background-color: rgba(0,0,0,.2);
 }
 
 
-.homebox1 p {
-	font: 20px bold;
-	font-family: 'Source Sans Pro', sans-serif;
-	color: #D55256;
-}
-
-.expchat{
+.book-bank-home {
 	margin: 30px 0 10px 0;
-	padding:10px 10px 40px 10px;
-	background: grey;
-	background: rgba(192, 192, 192, 0.1);
-	border-top: 1px solid #dbdbdb;
-	border-bottom: 1px solid #dbdbdb;
+	padding: 10px;
 }
 
-.expchat h2{
-	width: 30%;
-	margin: 16px 20px 20px 20px;
-	font: 30px bold;
+.book-bank-home h2{
+	margin: 20px auto;
+	font: 35px bold;
 	font-family: 'Montserrat', sans-serif;
 	color: #D55256;
-
+	text-transform: uppercase;
 }
 
-.expchat p{
-	font: 14px bold;
+.book-bank-home p{
+	font: 16px bold;
 	font-family: 'Source Sans Pro', sans-serif;
 	margin-bottom: 20px;
 	color: #003442;
 	margin-top: 3px;
 }
-.expchat h3{
+.book-bank-home h3{
 	font: 20px bold;
 	font-family: 'Source Sans Pro', sans-serif;
 	margin: 20px 10px 10px 10px;
 	color: #003442;
-
 }
 
-.expchat hr{
+.book-bank-home h4 {
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 20px 10px 10px 10px;
+	color: #D55256;
+}
+
+.book-bank-home hr{
 	height: 2px;
     border: 0;
 	width: 30%;
 }
-.expimg{
+.exp-img{
 	height: 120px;
 	width: 120px;
 	border:2px solid #dbdbdb;
@@ -89,25 +178,9 @@
 	margin-bottom: 10px;
 }
 
-.testimonial-image{
-	background-color: darkgrey;
-	background-color: rgba(0,0,0,.2);
-}
 
 section {
 	padding: 10px 0;
-}
-.carouselfeedback {
-	background-color: #003442;
-	color: white;
-	margin: 10px 0 70px 0;
-}
-
-.carouselfeedback blockquote{
-	min-height: 90px;
-}
-.carouselfeedback cite {
-	margin: 0 80px 0 0;
 }
 
 .center {
@@ -183,33 +256,7 @@ section {
     border-radius: 100px;
 }
 
-.feedbackbtn {
-	margin:20px;
-}
 
-.testimonial-login-message {
-	font-size: 14px;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 500;
-	color: white;
-	position: relative;
-	top: 0;
-	left: 140px;
-
-}
-
-.carousel-caption {
-	margin-bottom: 50px;
-}
-
-.main-carousel-heading {
-	font: 50px bold;
-	font-family: 'Cinzel Decorative', cursive;
-}
-.main-carousel-subheading {
-	font: 30px bold;
-	font-family: 'Cinzel Decorative', cursive;
-}
 
 .testimonial-button{
 	font: 20px bold;

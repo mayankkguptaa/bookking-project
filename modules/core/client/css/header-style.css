@@ -1,14 +1,7 @@
-.header-bk {
-	background: #0F5959;
-	padding-left: 5%;
-	padding-right: 10%;
-	color: white;
-}
-
 .navbar-brand-name {
-	color: #21ebd8;
+	color: #17A697;
 	margin: auto auto;
 	font-family: Montserrat,'sans-serif';
 	font-size: 42px;
-	/*-webkit-text-stroke: 1px #FFAF3A;*/
+	-webkit-text-stroke: 1px yellow;
 }

@@ -10,10 +10,10 @@
 }
 
 .faq-heading {
-	background: #D55256;
+	background: #17A697;
 	min-height: 200px;
 	color: white;
-	margin-top: -10px;
+	margin-top: -40px;
 	padding: 50px 80px 80px 80px;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .faq-body h4 {
-	color: #D55256;
+	color: #0F5959;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
 	margin-bottom: 2px;
@@ -56,7 +56,8 @@
 
 .about-heading {
 	width: 100%;
-	margin-top: -10px;
+	margin-top: -40px;
+
 }
 
 .about-heading img {
@@ -69,6 +70,7 @@
 	max-width: 94%;
 	border-radius: 5px;
 	background: white;
+	color: #0F5959;
 	margin: -60px auto 25.9vh;
 	padding: 60px 20px 60px 60px;
 }
@@ -76,7 +78,7 @@
 .contact-heading {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 34px;
-	color: #D55256;
+	color: #17A697;
 	width: 100vw;
 }
 
@@ -93,7 +95,7 @@
 .contact-details-heading {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
-	color: #D55256;
+	color: #17A697;
 }
 
 .contact-details-heading2 {
@@ -111,8 +113,8 @@
 }
 
 .form-control:focus {
-	border-color: #D55256;
-	box-shadow: inset 0 1px 1px rgba(213, 82, 86, 0.07), 0 0 8px rgba(250, 0, 0, 0.6);
+	border-color: #17A697;
+	box-shadow: inset 0 1px 1px #17A697, 0 0 8px #17A697;
 }
 
 .contact-input {
@@ -124,20 +126,20 @@
 }
 
 .contact-send-btn, .contact-send-btn:active {
-	background: #D55256;
+	background: #17A697;
 	color: white;
 }
 
 .contact-send-btn:hover {
-	background: #bd494d;
+	background: #0F5959;
 	color: white;
 }
 
 .tnc-heading {
-	background: #D55256;
+	background: #17A697;
 	min-height: 200px;
 	color: white;
-	margin-top: -10px;
+	margin-top: -40px;
 	padding: 50px 80px 80px 80px;
 }
 
@@ -160,7 +162,7 @@
 }
 
 .tnc-body h4 {
-	color: #D55256;
+	color: #0F5959;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
 	margin-bottom: 2px;
@@ -175,11 +177,4 @@
 	font-size: 16px;
 	padding: 0;
 	margin: 1px;
-}
-
-
-
-
-.abc {
-	border: 1px solid black;
 }
