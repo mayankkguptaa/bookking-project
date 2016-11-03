@@ -45,7 +45,7 @@
       message.$update({ roomName: Chat.roomName }, function (message) {
         // Emit a 'chatMessage' message event
         Socket.emit('sendChat', { message: message });
-
+        vm.messages.unshift(message);
         // Clear the message text
         vm.messageText = '';
       }, function (res) {

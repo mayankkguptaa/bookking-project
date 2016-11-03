@@ -28,16 +28,23 @@ var BookSchema = new Schema({
     trim: true,
     required: 'Edition of the book is required'
   },
+  publishedYear: {
+    type: Number,
+    trim: true,
+    required: 'Publishing Year of Book is required'
+  },
   description: {
     type: String,
     trim: true,
     required: 'Description is required'
   },
-  pics: [{
-    type: String
-  }],
+  profileImageURL: {
+    type: String,
+    default: 'modules/books/client/img/default.png'
+  },
   price: {
     type: Number,
+    trim: true,
     required: 'Price is required'
   },
   created: {
@@ -46,4 +53,4 @@ var BookSchema = new Schema({
   }
 });
 
-mongoose.model('Category', CategorySchema);
+mongoose.model('Book', BookSchema);

@@ -91,20 +91,6 @@
         data: {
           pageTitle: 'Privacy Policy'
         }
-      })
-      .state('add-book', {
-        url: '/add-book',
-        templateUrl: 'modules/core/client/views/addBook.client.view.html',
-        data: {
-          pageTitle: 'Add Books'
-        }
-      })
-      .state('book-store', {
-        url: '/book-display',
-        templateUrl: 'modules/core/client/views/bookStore.client.view.html',
-        data: {
-          pageTitle: 'Book Store'
-        }
       });
   }
 }());

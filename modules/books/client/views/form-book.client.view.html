@@ -1,38 +1,73 @@
-<section>
-  <div class="page-header">
-    <h1>{{ vm.category._id ? 'Edit Category' : 'New Category' }}</h1>
-  </div>
-  <div class="col-md-12">
-    <form name="vm.form.categoryForm" class="form-horizontal" ng-submit="vm.save(vm.form.categoryForm.$valid)" novalidate>
-      <fieldset>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="name">Category Title</label>
-          <input name="name" type="text" ng-model="vm.category.name" id="name" class="form-control" placeholder="Category Title" required>
-          <div ng-messages="vm.form.categoryForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Category title is required.</p>
+<link rel="stylesheet" type="text/css" href="modules/core/client/css/add-book-style.css">
+
+<section class="add-book" >
+  <div class="container-fluid">
+    <div class="col-lg-12 full-screen">
+      <div class="row">
+
+        <div class="col-lg-3" align="center">
+          <img src="modules/core/client/img/old-books/oldbook1.jpg" />
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+          <div class="page-header list-book-heading">
+            <h1>{{ vm.book._id ? 'Edit Book Details' : 'Add a Book' }}</h1>
+          </div>
+          <div class="col-lg-10">
+            <form name="vm.form.bookForm" class="form-horizontal" ng-submit="vm.save(vm.form.bookForm.$valid)" novalidate>
+              <fieldset>
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="title">Book Title</label>
+                  <input name="title" type="text" ng-model="vm.book.title" id="title" class="form-control" placeholder="Book Title" required>
+                  <div ng-messages="vm.form.bookForm.title.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Book title is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="author">Author</label>
+                  <input name="author" type="text" ng-model="vm.book.author" id="author" class="form-control" placeholder="Author's Name" required>
+                  <div ng-messages="vm.form.bookForm.author.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Author name is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="edition">Edition</label>
+                  <input name="edition" type="text" ng-model="vm.book.edition" id="edition" class="form-control" placeholder="Book Edition" required>
+                  <div ng-messages="vm.form.bookForm.edition.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Book Edition is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="publishedYear">Published Year</label>
+                  <input name="publishedYear" pattern="[0-9]{4}" ng-model="vm.book.publishedYear" id="publishedYear" class="form-control" placeholder="Published in which Year" required>
+                  <div ng-messages="vm.form.bookForm.publishedYear.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Published Year is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="description">Description of the book</label>
+                  <textarea name="description" ng-model="vm.book.description" id="description" class="form-control" cols="30" rows="10" placeholder="Description" required></textarea>
+                  <div ng-messages="vm.form.bookForm.description.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Book Description is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" show-errors>
+                  <label class="control-label" for="price">Price</label>
+                  <input name="price" type="number" ng-model="vm.book.price" id="price" class="form-control" placeholder="Price" required>
+                  <div ng-messages="vm.form.bookForm.price.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Book's Price is required.</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn book-btn">{{vm.book._id ? 'Update' : 'Create'}}</button>
+                </div>
+                <div ng-show="vm.error" class="text-danger">
+                  <strong ng-bind="vm.error"></strong>
+                </div>
+              </fieldset>
+            </form>
           </div>
         </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="description">Description</label>
-          <textarea name="description" ng-model="vm.category.description" id="description" class="form-control" cols="30" rows="10" placeholder="Description" required></textarea>
-          <div ng-messages="vm.form.categoryForm.description.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Category Description is required.</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="price">Price</label>
-          <input name="price" type="number" ng-model="vm.category.price" id="price" class="form-control" placeholder="Price" required>
-          <div ng-messages="vm.form.categoryForm.price.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Category Price is required.</p>
-          </div>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.category._id ? 'Update' : 'Create'</button>
-        </div>
-        <div ng-show="vm.error" class="text-danger">
-          <strong ng-bind="vm.error"></strong>
-        </div>
-      </fieldset>
-    </form>
+      </div>
+    </div>
   </div>
 </section>

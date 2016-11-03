@@ -38,7 +38,7 @@
 
     function submitBookAdClicked() {
       if (vm.user) {
-        $state.go('add-book');
+        $state.go('books.create');
       } else {
         vm.canNotSubmitAdMsg = true;
       }

@@ -2,118 +2,76 @@
   'use strict';
 
   angular
-    .module('categories.routes')
+    .module('books.routes')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('admin.categories', {
+      .state('books', {
         abstract: true,
-        url: '/categories',
+        url: '/books',
         template: '<ui-view/>'
       })
-      .state('admin.categories.list', {
+      .state('books.list', {
         url: '',
-        templateUrl: 'modules/categories/client/views/list-categories.client.view.html',
-        controller: 'CategoriesListController',
+        templateUrl: 'modules/books/client/views/list-books.client.view.html',
+        controller: 'BooksListController',
         controllerAs: 'vm',
         data: {
-          pageTitle: 'List Categories'
+          pageTitle: 'List Books'
         }
       })
-      .state('admin.categories.create', {
+      .state('books.create', {
         url: '/create',
-        templateUrl: 'modules/categories/client/views/form-category.client.view.html',
-        controller: 'CategoriesController',
+        templateUrl: 'modules/books/client/views/form-book.client.view.html',
+        controller: 'BooksController',
         controllerAs: 'vm',
         resolve: {
-          categoryResolve: newCategory
+          bookResolve: newBook
         },
         data: {
-          pageTitle: 'Categories Create'
+          pageTitle: 'Books Create'
         }
       })
-      .state('admin.categories.edit', {
-        url: '/:categoryId/edit',
-        templateUrl: 'modules/categories/client/views/form-category.client.view.html',
-        controller: 'CategoriesController',
+      .state('books.edit', {
+        url: '/:bookId/edit',
+        templateUrl: 'modules/books/client/views/form-book.client.view.html',
+        controller: 'BooksController',
         controllerAs: 'vm',
         resolve: {
-          categoryResolve: getCategory
+          bookResolve: getBook
         },
         data: {
-          pageTitle: 'Edit Category {{ categoryResolve.name }}'
+          pageTitle: 'Edit Book {{ bookResolve.name }}'
         }
       })
-      .state('admin.categories.view', {
-        url: '/:categoryId',
-        templateUrl: 'modules/categories/client/views/show-category.client.view.html',
-        controller: 'CategoriesController',
+      .state('books.view', {
+        url: '/:bookId',
+        templateUrl: 'modules/books/client/views/show-book.client.view.html',
+        controller: 'BooksController',
         controllerAs: 'vm',
         resolve: {
-          categoryResolve: getCategory
+          bookResolve: getBook
         },
         data: {
-          pageTitle: 'Category {{ categoryResolve.name }}'
-        }
-      })
-      .state('facial', {
-        url: '/Facial',
-        templateUrl: 'modules/categories/client/views/facial.client.view.html',
-        data: {
-          pageTitle: 'Facial'
-        }
-      })
-      .state('body', {
-        url: '/Body',
-        templateUrl: 'modules/categories/client/views/body.client.view.html',
-        data: {
-          pageTitle: 'Body'
-        }
-      })
-      .state('hair', {
-        url: '/Hair',
-        templateUrl: 'modules/categories/client/views/hair.client.view.html',
-        data: {
-          pageTitle: 'Hair'
-        }
-      })
-      .state('makeUp', {
-        url: '/MakeUp',
-        templateUrl: 'modules/categories/client/views/makeUp.client.view.html',
-        data: {
-          pageTitle: 'Make Up'
-        }
-      })
-      .state('massage', {
-        url: '/Massage',
-        templateUrl: 'modules/categories/client/views/massage.client.view.html',
-        data: {
-          pageTitle: 'Massage'
-        }
-      })
-      .state('nail', {
-        url: '/Nail',
-        templateUrl: 'modules/categories/client/views/nail.client.view.html',
-        data: {
-          pageTitle: 'Nail'
+          pageTitle: 'Book {{ bookResolve.name }}'
         }
       });
 
-    getCategory.$inject = ['$stateParams', 'CategoriesService'];
+    getBook.$inject = ['$stateParams', 'BooksService'];
 
-    function getCategory($stateParams, CategoriesService) {
-      return CategoriesService.get({
-        categoryId: $stateParams.categoryId
+    function getBook($stateParams, BooksService) {
+      return BooksService.get({
+        bookId: $stateParams.bookId
       }).$promise;
     }
 
-    newCategory.$inject = ['CategoriesService'];
+    newBook.$inject = ['BooksService'];
 
-    function newCategory(CategoriesService) {
-      return new CategoriesService();
+    function newBook(BooksService) {
+      return new BooksService();
     }
   }
 }());

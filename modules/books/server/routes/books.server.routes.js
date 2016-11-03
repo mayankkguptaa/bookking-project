@@ -3,24 +3,21 @@
 /**
  * Module dependencies
  */
-var categoriesPolicy = require('../policies/books.server.policy.js'),
-  categories = require('../controllers/books.server.controller.js');
+var booksPolicy = require('../policies/books.server.policy.js'),
+  books = require('../controllers/books.server.controller.js');
 
 module.exports = function (app) {
-  // Categories collection routes
-  app.route('/api/categories').all(categoriesPolicy.isAllowed)
-    .get(categories.list)
-    .post(categories.create);
-
-  app.route('/api/categories/:categoryId/materials').all(categoriesPolicy.isAllowed)
-    .get(categories.materialList);
+  // Books collection routes
+  app.route('/api/books').all(booksPolicy.isAllowed)
+    .get(books.list)
+    .post(books.create);
 
   // Single article routes
-  app.route('/api/categories/:categoryId').all(categoriesPolicy.isAllowed)
-    .get(categories.read)
-    .put(categories.update)
-    .delete(categories.delete);
+  app.route('/api/books/:bookId').all(booksPolicy.isAllowed)
+    .get(books.read)
+    .put(books.update)
+    .delete(books.delete);
 
   // Finish by binding the article middleware
-  app.param('categoryId', categories.categoryByID);
+  app.param('bookId', books.bookByID);
 };

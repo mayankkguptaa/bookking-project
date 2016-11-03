@@ -1,20 +1,64 @@
-.category-description-pages {
-	margin-top: 20px;
+.show-book-title{
+	text-transform: capitalize;
+	margin-left: 1%;
+}
+
+.list-book-heading {
+	text-transform: uppercase;
+	color: #17A697;
+	margin-top: 0;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 12px;
+}
+.list-book-items-heading {
+	text-transform: uppercase;
+	color: #0F5959;
+	margin-top: 0;
+	width: 100%;
+}
+.list-book-price {
+	color: #17A697;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 12px;
+}
+
+.show-book-description:first-letter {
+	text-transform: capitalize;
+}
+.list-book-items {
+	display: block;
+	border: 1px solid lightgrey;
+	background: #f8f8f8;
+	border-radius: 3px;
+	padding: 0 20px;
+	min-height: 270px;
+}
+
+.list-book-description {
+	max-height: 50px;
+	min-height: 50px;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 15px;
+	font-size: 14px;
+	margin-top: 10px;
 }
 
-.category-image {
-	width: 10%;
-	background: lightgrey;
-	background: rgba(250, 250, 250, 0.71);
-	outline: #cdcdcd double 6px;
-	outline-offset: 2px;
-	margin: 0 10px 20px 10px;
+.list-book-description:first-letter {
+	text-transform: capitalize;
 }
 
-.category-description-pages h2 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 30px;
-	color: #d5644f;
+.list-book-img {
+	height: 80px;
+	width: 55px;
+	margin: 0 10px;
+}
+.small-text {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12px;
+}
+.list-book-items-btn {
+	margin-top: 10px;
+	max-height: 24px;
+	line-height: 10px;
 }

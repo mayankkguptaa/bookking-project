@@ -74,7 +74,6 @@ exports.threadByName = function (req, res, next, name) {
         message: 'No Chat Room with that name has been found'
       });
     }
-
     req.thread = thread;
     next();
   });

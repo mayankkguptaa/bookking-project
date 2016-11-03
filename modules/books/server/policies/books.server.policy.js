@@ -9,53 +9,41 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Categories Permissions
+ * Invoke Books Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/categories',
+      resources: '/api/books',
       permissions: '*'
     }, {
-      resources: '/api/categories/:categoryId',
-      permissions: '*'
-    }, {
-      resources: '/api/categories/:categoryId/materials',
-      permissions: '*'
-    }, {
-      resources: '/api/materials/:materialId',
+      resources: '/api/books/:bookId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/categories',
-      permissions: ['get']
+      resources: '/api/books',
+      permissions: '*'
     }, {
-      resources: '/api/categories/:categoryId',
-      permissions: ['get']
-    }, {
-      resources: '/api/categories/:categoryId/materials',
-      permissions: ['get']
-    }, {
-      resources: '/api/materials/:materialId',
-      permissions: ['get']
+      resources: '/api/books/:bookId',
+      permissions: ['*']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/categories',
+      resources: '/api/books',
       permissions: ['get']
     }, {
-      resources: '/api/categories/:categoryId',
+      resources: '/api/books/:bookId',
       permissions: ['get']
     }]
   }]);
 };
 
 /**
- * Check If Categories Policy Allows
+ * Check If Books Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];

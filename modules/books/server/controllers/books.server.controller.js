@@ -5,130 +5,114 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Category = mongoose.model('Category'),
-  Material = mongoose.model('Material'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+  multer = require('multer'),
+  config = require(path.resolve('./config/config')),
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+  Book = mongoose.model('Book');
 
 /**
- * Create a new category
+ * Create a new book
  * @param req
  * @param res
  */
 exports.create = function (req, res) {
-  var category = new Category(req.body);
+  var book = new Book(req.body);
 
-  category.save(function (err) {
+  book.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(category);
+      res.json(book);
     }
   });
 };
 
 /**
- * Get the category
+ * Get the book
  * @param req
  * @param res
  */
 exports.read = function (req, res) {
   // Convert mongoose document to json
-  var category = req.category ? req.category.toJSON() : {};
+  var book = req.book ? req.book.toJSON() : {};
 
-  res.json(category);
+  res.json(book);
 };
-
-exports.materialList = function (req, res) {
-  var category = req.category;
-
-  Material.find({ category: category._id }).exec(function (err, materials) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else if (!materials) {
-      materials = [];
-    }
-
-    res.json(materials);
-  });
-};
-
 /**
- * Update the category
+ * Update the book
  * @param req
  * @param res
  */
 exports.update = function (req, res) {
-  var category = req.category;
+  var book = req.book;
 
-  category.description = req.body.description ? req.body.description : category.description;
-  category.price = req.body.price ? req.body.price : category.price;
+  book.description = req.body.description ? req.body.description : book.description;
+  book.price = req.body.price ? req.body.price : book.price;
 
-  category.save(function (err) {
+  book.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(category);
+      res.json(book);
     }
   });
 };
 
 
 /**
- * Delete a category
+ * Delete a book
  */
 exports.delete = function (req, res) {
-  var category = req.category;
+  var book = req.book;
 
-  category.remove(function (err) {
+  book.remove(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(category);
+      res.json(book);
     }
   });
 };
 
 
 /**
- * List of Categories
+ * List of Books
  */
 exports.list = function (req, res) {
-  Category.find().sort('created').exec(function (err, categories) {
+  Book.find().sort('created').exec(function (err, books) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(categories);
+      res.json(books);
     }
   });
 };
 
-exports.categoryByID = function (req, res, next, id) {
+exports.bookByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Category is invalid'
+      message: 'Book is invalid'
     });
   }
 
-  Category.findById(id).exec(function (err, category) {
+  Book.findById(id).exec(function (err, book) {
     if (err) {
       return next(err);
-    } else if (!category) {
+    } else if (!book) {
       return res.status(404).send({
-        message: 'No category with that identifier has been found'
+        message: 'No book with that identifier has been found'
       });
     }
-    req.category = category;
+    req.book = book;
     next();
   });
 };

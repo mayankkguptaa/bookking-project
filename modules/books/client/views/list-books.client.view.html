@@ -1,20 +1,46 @@
 <section>
-  <div class="page-header">
-    <h1>Categories</h1>
-    <button class="btn btn-primary mce-btn-large" ui-sref="admin.categories.create">Add New Category</button>
+  <div class="page-header list-book-heading" align="center">
+    <h1>Books</h1>
   </div>
-  <div class="list-group">
-    <a ng-repeat="category in vm.categories" ui-sref="admin.categories.view({ categoryId: category._id })" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="category.created | date:'mediumDate'"></span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="category.name"></h4>
-      <p class="list-group-item-text" ng-bind="category.description"></p>
-      <h6 ng-bind="category.price"></h6>
-    </a>
+  <div class="row">
+    <div class="col-lg-2" ng-repeat="book in vm.books">
+      <div ui-sref="books.view({ bookId: book._id })" class="list-book-items">
+        <div align="center" class="list-book-items-heading">
+          <h4  ng-bind="book.title"></h4>
+        </div>
+        <div align="center">
+          <img src="modules/books/client/img/default.png" class="list-book-img">
+        </div>
+        <div align="center">
+          <p  class="list-book-description" ng-bind="book.description"></p>
+        </div>
+
+        <div class="pull-right">
+          <table class="table-hover">
+            <tr class="small-text pull-right">
+              <td>
+                Posted on: <span ng-bind="book.created | date:'mediumDate'"></span>
+              </td>
+            </tr>
+            <tr class="list-book-price pull-right">
+              <td>
+                Price: <span ng-bind="book.price"></span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div align="center">
+          <button ui-sref="books.buy" class="btn book-btn list-book-items-btn">
+            Buy
+          </button>
+          <button ui-sref="books.rent" class="btn book-btn list-book-items-btn">
+            Rent
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="alert alert-warning text-center" ng-if="vm.categories.$resolved && !vm.categories.length">
-    No categories yet, why don't you <a ui-sref="categories.create">create one</a>?
+  <div class="alert alert-warning text-center" ng-if="vm.books.$resolved && !vm.books.length">
+    No books yet, why don't you <a ui-sref="books.create">add one</a>?
   </div>
 </section>

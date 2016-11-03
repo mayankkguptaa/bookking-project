@@ -2,36 +2,15 @@
   'use strict';
 
   angular
-    .module('categories.services')
-    .factory('CategoriesService', CategoriesService);
+    .module('books.services')
+    .factory('BooksService', BooksService);
 
-  CategoriesService.$inject = ['$resource'];
+  BooksService.$inject = ['$resource'];
 
-  function CategoriesService($resource) {
-    return $resource('api/categories/:categoryId/:temp', {
-      categoryId: '@_id',
+  function BooksService($resource) {
+    return $resource('api/books/:bookId/:temp', {
+      bookId: '@_id',
       temp: ''
-    }, {
-      update: {
-        method: 'PUT'
-      },
-      materialList: {
-        method: 'GET',
-        params: { temp: 'materials' },
-        isArray: true
-      }
-    });
-  }
-
-  angular
-    .module('categories.services')
-    .factory('MaterialsService', MaterialsService);
-
-  MaterialsService.$inject = ['$resource'];
-
-  function MaterialsService($resource) {
-    return $resource('api/materials/:materialId', {
-      materialId: '@_id'
     }, {
       update: {
         method: 'PUT'
