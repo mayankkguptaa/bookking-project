@@ -8,7 +8,8 @@ var path = require('path'),
   multer = require('multer'),
   config = require(path.resolve('./config/config')),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  Book = mongoose.model('Book');
+  Book = mongoose.model('Book'),
+  User = mongoose.model('User');
 
 /**
  * Create a new book
@@ -17,6 +18,7 @@ var path = require('path'),
  */
 exports.create = function (req, res) {
   var book = new Book(req.body);
+
 
   book.save(function (err) {
     if (err) {

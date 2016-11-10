@@ -47,19 +47,22 @@
 
   angular
     .module('core')
-    .controller('TestimonialModal', TestimonialModal);
+    .controller('ModalCtrl', ModalCtrl);
 
-  TestimonialModal.$inject = ['$uibModalInstance'];
+  ModalCtrl.$inject = ['Authentication', '$uibModalInstance', '$state'];
 
-  function TestimonialModal($uibModalInstance) {
+  function ModalCtrl(Authentication, $uibModalInstance, $state) {
     var vm = this;
 
+    vm.user = Authentication.user;
+
     vm.ok = function () {
-      $uibModalInstance.close();
+      $uibModalInstance.close($ctrl.selected.item);
     };
 
     vm.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };
+
   }
 }());

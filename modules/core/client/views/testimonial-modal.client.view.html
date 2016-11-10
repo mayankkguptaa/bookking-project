@@ -1,17 +1,20 @@
 <div class="modal-header">
   <button type="button" class="close" ng-click="vm.cancel()">&times;</button>
-  Submit Your Testimonial
+  <h1>Hello {{vm.user.displayName}}, Submit Your Testimonial</h1>
 </div>
 
-<div class="modal-body">
+<div class="modal-body" style="margin: 20px;">
 
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="testimonial">Testimonial:</label>
-      <div class="col-sm-10">
-        <textarea class="form-control" id="testimonial" placeholder="Feed in testimonial"></textarea>
+  <form  class="form-horizontal" name="vm.testimonialForm" ng-submit="vm.testimonialFormSubmitted()" novalidate autocomplete="off">
+    <fieldset >
+      <div class="form-group" show-errors>
+        <label for="data">Provide your testimonial</label>
+        <textarea class="form-control" ng-model="vm.testimonial.data" id="data" placeholder="Feed in testimonial" required></textarea>
+        <div ng-messages="vm.testimonialForm.data.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Testimonial content is required.</p>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </form>
 
 </div>

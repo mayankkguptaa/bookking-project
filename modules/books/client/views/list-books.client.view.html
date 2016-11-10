@@ -4,17 +4,18 @@
   </div>
   <div class="row">
     <div class="col-lg-2" ng-repeat="book in vm.books">
-      <div ui-sref="books.view({ bookId: book._id })" class="list-book-items">
-        <div align="center" class="list-book-items-heading">
-          <h4  ng-bind="book.title"></h4>
+      <div class="list-book-items">
+        <div ui-sref="books.view({ bookId: book._id })">
+          <div align="center" class="list-book-items-heading">
+            <h4  ng-bind="book.title"></h4>
+          </div>
+          <div align="center">
+            <img src="modules/books/client/img/default.png" class="list-book-img">
+          </div>
+          <div align="center">
+            <p  class="list-book-description" ng-bind="book.description"></p>
+          </div>
         </div>
-        <div align="center">
-          <img src="modules/books/client/img/default.png" class="list-book-img">
-        </div>
-        <div align="center">
-          <p  class="list-book-description" ng-bind="book.description"></p>
-        </div>
-
         <div class="pull-right">
           <table class="table-hover">
             <tr class="small-text pull-right">
@@ -30,10 +31,10 @@
           </table>
         </div>
         <div align="center">
-          <button ui-sref="books.buy" class="btn book-btn list-book-items-btn">
+          <button ui-sref="books.buy-rent" class="btn book-btn list-book-items-btn">
             Buy
           </button>
-          <button ui-sref="books.rent" class="btn book-btn list-book-items-btn">
+          <button ui-sref="books.buy-rent" class="btn book-btn list-book-items-btn">
             Rent
           </button>
         </div>

@@ -58,6 +58,12 @@
         data: {
           pageTitle: 'Book {{ bookResolve.name }}'
         }
+      })
+      .state('books.buy-rent', {
+        url: '/buy-rent',
+        templateUrl: 'modules/books/client/views/buy-rent.client.view.html',
+        controller: 'BooksController',
+        controllerAs: 'vm'
       });
 
     getBook.$inject = ['$stateParams', 'BooksService'];

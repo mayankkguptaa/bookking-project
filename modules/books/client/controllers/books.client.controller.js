@@ -9,14 +9,21 @@
 
   function BooksController($scope, $state, book, $window, Authentication, BooksService, $uibModal, $log) {
     var vm = this;
-
+    vm.user = Authentication.user;
     vm.book = book;
-    vm.authentication = Authentication;
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.canChange = function () {
+      if (vm.user.roles[1] === 'admin')
+        return true;
+      else return false;
+    };
 
+    function isAuthorised() {
+
+    }
     // Remove existing Book
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
