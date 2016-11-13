@@ -13,7 +13,7 @@
             <h1>{{ vm.book._id ? 'Edit Book Details' : 'Add a Book' }}</h1>
           </div>
           <div class="col-lg-10">
-            <form name="vm.form.bookForm" class="form-horizontal" ng-submit="vm.save(vm.form.bookForm.$valid)" novalidate>
+            <form name="vm.form.bookForm" class="form-horizontal" ng-submit="vm.save(vm.form.bookForm.$valid);" novalidate>
               <fieldset>
                 <div class="form-group" show-errors>
                   <label class="control-label" for="title">Book Title</label>

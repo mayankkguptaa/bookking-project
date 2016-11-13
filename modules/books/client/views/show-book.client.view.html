@@ -6,11 +6,10 @@
   </div>
   <div class="col-md-5">
     <div class="pull-right">
-      <a class="btn btn-primary" ui-sref="books.edit({ bookId: vm.book._id })"
-         ng-show="vm.canChange">
+      <a class="btn btn-primary" ui-sref="books.edit({ bookId: vm.book._id })" ng-show="vm.isAuthorisedToUpdate">
         <i class="glyphicon glyphicon-edit"></i>
       </a>
-      <a class="btn btn-primary" ng-click="vm.remove()">
+      <a class="btn btn-primary" ng-click="vm.remove()" ng-show="vm.isAuthorisedToUpdate">
         <i class="glyphicon glyphicon-trash"></i>
       </a>
     </div>
@@ -23,7 +22,6 @@
     <p class="lead show-book-description" ng-bind="vm.book.description"></p>
     <h3 class="lead" ng-bind="vm.book.price"></h3>
   </div>
-
 
   <div class="col-lg-10">
     <button type="button" class="btn book-btn"

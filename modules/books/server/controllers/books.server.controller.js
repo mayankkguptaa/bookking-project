@@ -50,6 +50,10 @@ exports.read = function (req, res) {
 exports.update = function (req, res) {
   var book = req.book;
 
+  book.title = req.body.title ? req.body.title : book.title;
+  book.author = req.body.author ? req.body.author : book.author;
+  book.edition = req.body.edition ? req.body.edition : book.edition;
+  book.publishedYear = req.body.publishedYear ? req.body.publishedYear : book.publishedYear;
   book.description = req.body.description ? req.body.description : book.description;
   book.price = req.body.price ? req.body.price : book.price;
 

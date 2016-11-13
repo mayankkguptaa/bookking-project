@@ -15,15 +15,19 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-    vm.canChange = function () {
-      if (vm.user.roles[1] === 'admin')
-        return true;
-      else return false;
-    };
+    vm.isAuthorisedToUpdate = false;
+    vm.isAuthorised = isAuthorised;
+
+    isAuthorised();
 
     function isAuthorised() {
-
+      if (vm.user.roles[1].toString() === 'admin'.toString()) {
+        vm.isAuthorisedToUpdate = true;
+      } else {
+        vm.isAuthorisedToUpdate = false;
+      }
     }
+
     // Remove existing Book
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
