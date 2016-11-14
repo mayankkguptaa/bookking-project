@@ -50,6 +50,11 @@ var BookSchema = new Schema({
   created: {
     type: Date,
     default: Date.now()
+  },
+  givenByUser: {
+    type: Schema.ObjectId,
+    ref: 'User',
+    required: 'Current user is required'
   }
 });
 

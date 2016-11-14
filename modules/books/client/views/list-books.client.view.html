@@ -31,11 +31,8 @@
           </table>
         </div>
         <div align="center">
-          <button ui-sref="books.buy-rent" class="btn book-btn list-book-items-btn">
-            Buy
-          </button>
-          <button ui-sref="books.buy-rent" class="btn book-btn list-book-items-btn">
-            Rent
+          <button ui-sref="books.buy({ bookId: book._id })" class="btn book-btn list-book-items-btn">
+            Buy/Rent
           </button>
         </div>
       </div>

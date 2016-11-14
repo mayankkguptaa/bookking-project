@@ -19,6 +19,7 @@ var path = require('path'),
 exports.create = function (req, res) {
   var book = new Book(req.body);
 
+  book.givenByUser = req.user._id;
 
   book.save(function (err) {
     if (err) {
@@ -92,6 +93,18 @@ exports.delete = function (req, res) {
  */
 exports.list = function (req, res) {
   Book.find().sort('created').exec(function (err, books) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(books);
+    }
+  });
+};
+
+exports.listBookSByUser = function (req, res) {
+  Book.find({ user: req.user._id }).sort('-created').populate('user title').exec(function (err, books) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)

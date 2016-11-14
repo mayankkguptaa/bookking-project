@@ -4,7 +4,7 @@
       <h1 ng-bind="vm.book.title"></h1>
     </div>
   </div>
-  <div class="col-md-5">
+  <div class="col-md-8 show-book">
     <div class="pull-right">
       <a class="btn btn-primary" ui-sref="books.edit({ bookId: vm.book._id })" ng-show="vm.isAuthorisedToUpdate">
         <i class="glyphicon glyphicon-edit"></i>
@@ -13,14 +13,21 @@
         <i class="glyphicon glyphicon-trash"></i>
       </a>
     </div>
+
+    <p class="lead show-book-description">The author of the book is
+      <span ng-bind="vm.book.author" class="text-capitalize"></span>
+      and it is <span ng-bind="vm.book.edition"></span> edition published in
+      <span ng-bind="vm.book.publishedYear"></span>
+    </p>
+
+    <p class="lead show-book-description" ng-bind="vm.book.description"></p>
+    <p class="lead show-book-description">Price : <span ng-bind="vm.book.price"></span></p>
     <small>
       <em class="text-muted">
-        Created on
+        Posted on
         <span ng-bind="vm.book.created | date:'mediumDate'"></span>
       </em>
     </small>
-    <p class="lead show-book-description" ng-bind="vm.book.description"></p>
-    <h3 class="lead" ng-bind="vm.book.price"></h3>
   </div>
 
   <div class="col-lg-10">

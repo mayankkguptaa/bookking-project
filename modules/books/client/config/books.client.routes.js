@@ -35,6 +35,7 @@
           pageTitle: 'Books Create'
         }
       })
+
       .state('books.edit', {
         url: '/:bookId/edit',
         templateUrl: 'modules/books/client/views/form-book.client.view.html',
@@ -59,11 +60,17 @@
           pageTitle: 'Book {{ bookResolve.name }}'
         }
       })
-      .state('books.buy-rent', {
-        url: '/buy-rent',
-        templateUrl: 'modules/books/client/views/buy-rent.client.view.html',
+      .state('books.buy', {
+        url: '/:bookId',
+        templateUrl: 'modules/books/client/views/buy.client.view.html',
         controller: 'BooksController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          bookResolve: getBook
+        },
+        data: {
+          pageTitle: 'Book {{ bookResolve.name }}'
+        }
       });
 
     getBook.$inject = ['$stateParams', 'BooksService'];
